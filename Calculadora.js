@@ -2,6 +2,7 @@
 
 const promptSync = require('prompt-sync');
 const prompt = promptSync();
+let n = "\n"
 
 function soma(a, b) {
     return a + b;
@@ -25,9 +26,9 @@ function divisao(a, b) {
 }
 
 while (true) {
-    let escolha = prompt("Escolha a operação: 1. Soma, 2. Subtração, 3. Multiplicação, 4. divisão, 5. Sair");
+    let escolha = prompt("Escolha a operação: 1. Soma, 2. Subtração, 3. Multiplicação, 4. divisão, 5. Potencia, 6. Raiz quadrada, 7. tan 8. cos 9. sen 10. sair, qual a escolha? : ", n);
 
-    if (escolha === "5") {
+    if (escolha === "10") {
         break;
     }
 
@@ -42,7 +43,20 @@ while (true) {
         console.log("Resultado: ", multiplicacao(num1, num2));
     } else if (escolha === "4") {
         console.log("Resultado: ", divisao(num1, num2));
-    } else {
-        console.log("Escolha inválida");
+    } else if (escolha === "5") {
+        console.log("Resultado: ", Math.pow(num1, num2));
     }
+    else if (escolha === "6") {
+        console.log("Resultado: ", Math.sqrt(num1))
+    }
+    else if (escolha === "5") {
+        console.log("Resultado: ", Math.pow(num1, num2));
+    }
+    else if (escolha === "5") {
+        console.log("Resultado: ", Math.pow(num1, num2));
+    }
+
+
+} 
+  else { onsole.log("Escolha inválida");
 }
