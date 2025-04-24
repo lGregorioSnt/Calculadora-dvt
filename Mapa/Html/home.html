@@ -1,0 +1,65 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <link rel="stylesheet" href="/Mapa/css/styles.css" />  
+    <title>Hopi-Hari</title>  
+</head>  
+<body>  
+  <nav class="navbar">  
+    <ul class="navbar-group left">  
+        <li><a class="a" href="#">Sobre</a></li>  
+        <li id="catalogo">  
+            <a class="a" href="#">Atrações ▼</a>  
+            <ul class="submenu">  
+                <li><a href="#" class="a">atração 1</a></li>  
+                <li><a href="#" class="a">atração 2</a></li>  
+                <li><a href="#" class="a">atração 3</a></li>  
+            </ul>  
+        </li>  
+    </ul>  
+
+    <img src="/Mapa/img/hopi.png" alt="Logo" class="logo" />  
+
+    <ul class="navbar-group right">  
+        <li><a class="a" href="#">Contato</a></li>   
+        <li><a class="a" href="#">Calendario</a></li>  
+    </ul>  
+  </nav>  
+
+  <!-- Seu mapa de imagem (sem alterações) -->  
+  <img src="/Mapa/img/map.jpeg" usemap="#image-map" class="map " />  
+
+  <map name="image-map">  
+      <area target="" alt="Mistieri" title="Mistieri" href="/Mapa/Html/mistieri.html" coords="142,71,433,319" shape="rect" />  
+      <area target="" alt="Kaminda" title="Kaminda" href="/Mapa/Html/kaminda.html" coords="337,333,618,538" shape="rect" />  
+      <area target="" alt="Wild West" title="Wild West" href="/Mapa/Html/wild.html" coords="706,296,1170,466" shape="rect" />  
+      <area target="" alt="Infantasia" title="Infantasia" href="/Mapa/Html/mistieri.html" coords="456,188,689,317" shape="rect" />  
+      <area target="" alt="Aribabiba" title="Aribabiba" href="/Mapa/Html/aribabiba.html" coords="465,55,921,180" shape="rect" />  
+  </map>  
+
+  <script src="https://unpkg.com/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>  
+  <script>  
+      window.onload = function () {  
+          imageMapResize(); // Inicializa a lib  
+
+          // Script para abrir/fechar submenu ao clicar no Catálogo ▼  
+          const catalogo = document.getElementById('catalogo');  
+          const catalogoLink = catalogo.querySelector('a');  
+
+          catalogoLink.addEventListener('click', function (e) {  
+              e.preventDefault(); // evitar navegação  
+              catalogo.classList.toggle('open');  
+          });  
+
+          // Fecha submenu ao clicar fora  
+          window.addEventListener('click', function (e) {  
+              if (!catalogo.contains(e.target)) {  
+                  catalogo.classList.remove('open');  
+              }  
+          });  
+      };  
+  </script>  
+</body>  
+</html>  
